@@ -3,6 +3,7 @@
 
 import random
 from turtle import Turtle, Screen
+import record_game
 
 Race = False
 
@@ -35,6 +36,8 @@ while Race:
                 print(f"You have Won the bet on {winning} turtle! the {winning} is the winner")
             else:
                 print(f"You lose! {winning} turtle is winner")
+            record_game(bet, winning)
+
 
         distance = random.randint(0, 10)
         turtle.forward(distance)
