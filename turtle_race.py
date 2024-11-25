@@ -1,7 +1,7 @@
 # code credit: https://www.geeksforgeeks.org/turtle-race-game-using-python-turtle-graphics-library/
 
-
 import random
+from record_game import record_game_data  # 导入 record_game_data 函数
 from turtle import Turtle, Screen
 
 Race = False
@@ -12,7 +12,12 @@ bet = s.textinput(title="Make your Bet", prompt="Which turtle which win ? Enter 
 X = -230
 Y = -100
 colors = ["red", "orange", "yellow", "blue", "violet"]
-
+# Verify if user input is valid
+if bet not in colors:
+    print("Invalid bet. Please restart the program and choose a color from the following:")
+    print(", ".join(colors))
+    s.bye()  # Close the turtle screen
+    exit()
 turtles = []
 for i in range(0, 5):
     t = Turtle(shape="turtle")
@@ -32,9 +37,12 @@ while Race:
             Race = False
             winning = turtle.pencolor()
             if winning == bet:
-                print(f"You have Won the bet on {winning} turtle! the {winning} is the winner")
+                print(f"You have Won the bet on {winning} turtle! The {winning} is the winner")
             else:
-                print(f"You lose! {winning} turtle is winner")
+                print(f"You lose! {winning} turtle is the winner")
+
+            # 调用 record_game_data 函数记录数据
+            record_game_data(bet, winning)
 
         distance = random.randint(0, 10)
         turtle.forward(distance)
