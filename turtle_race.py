@@ -14,6 +14,10 @@ X = -230
 Y = -100
 colors = ["red", "orange", "yellow", "blue", "violet"]
 
+if bet not in colors:
+    print("Invalid input! Please choose a valid color.")
+    exit()
+    
 turtles = []
 for i in range(0, 5):
     t = Turtle(shape="turtle")
@@ -37,7 +41,7 @@ while Race:
             else:
                 print(f"You lose! {winning} turtle is winner")
             record_game_data(bet, winning)
-            
+
         distance = random.randint(0, 10)
         turtle.forward(distance)
 
