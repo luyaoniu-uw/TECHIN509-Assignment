@@ -13,7 +13,9 @@ bet = s.textinput(title="Make your Bet", prompt="Which turtle which win ? Enter 
 X = -230
 Y = -100
 colors = ["red", "orange", "yellow", "blue", "violet"]
-
+if bet not in colors:
+    print("Invalid color! Please choose from:", colors)
+    s.bye()
 turtles = []
 for i in range(0, 5):
     t = Turtle(shape="turtle")
@@ -37,7 +39,7 @@ while Race:
                 print(f"You have Won the bet on {winning} turtle! The {winning} is the winner")
             else:
                 print(f"You lose! {winning} turtle is the winner")
-                
+
             record_game_data(bet, winning)
         distance = random.randint(0, 10)
         turtle.forward(distance)
