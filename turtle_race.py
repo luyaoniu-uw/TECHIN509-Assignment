@@ -6,11 +6,21 @@ Race = False
 
 s = Screen()
 s.setup(width=500, height=400)
-bet = s.textinput(title="Make your Bet", prompt="Which turtle which win? Enter Color: ")
+
+# 讓用戶輸入選擇的顏色
+bet = s.textinput(title="Make your Bet", prompt="Which turtle will win? Enter Color: ")
 X = -230
 Y = -100
 colors = ["red", "orange", "yellow", "blue", "violet"]
 
+# 檢查用戶輸入的顏色是否在預設顏色列表中
+if bet not in colors:
+    print(f"Invalid bet! The color '{bet}' is not in the list of available colors.")
+    bet = None  # 如果顏色無效，將 bet 設為 None，防止比賽開始
+else:
+    Race = True
+
+# 設置烏龜
 turtles = []
 for i in range(0, 5):
     t = Turtle(shape="turtle")
@@ -18,9 +28,6 @@ for i in range(0, 5):
     t.penup()
     t.goto(x=X, y=-100 + 50 * i)
     turtles.append(t)
-
-if bet:
-    Race = True
 
 while Race:
     for turtle in turtles:
