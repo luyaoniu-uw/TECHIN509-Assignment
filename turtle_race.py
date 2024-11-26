@@ -1,8 +1,9 @@
 # code credit: https://www.geeksforgeeks.org/turtle-race-game-using-python-turtle-graphics-library/
 
 
-import random
 from turtle import Turtle, Screen
+from random import randint
+from record_game import record_game_data
 
 Race = False
 
@@ -36,7 +37,7 @@ while Race:
             else:
                 print(f"You lose! {winning} turtle is winner")
 
-        distance = random.randint(0, 10)
+        distance = randint(0, 10)
         turtle.forward(distance)
 
 s.exitonclick()
