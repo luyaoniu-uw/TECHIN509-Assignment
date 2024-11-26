@@ -6,6 +6,7 @@ from record_game import record_game_data  # 导入 record_game_data 函数
 
 Race = False
 
+# 创建游戏屏幕
 s = Screen()
 s.setup(width=500, height=400)
 
@@ -15,6 +16,13 @@ X = -230
 Y = -100
 colors = ["red", "orange", "yellow", "blue", "violet"]
 
+# 验证用户输入的颜色是否有效
+if bet not in colors:
+    print("Invalid color entered. Please choose a valid color from the list.")
+    Race = False  # 结束比赛，防止继续
+else:
+    Race = True  # 如果输入有效，继续比赛
+
 turtles = []
 for i in range(0, 5):
     t = Turtle(shape="turtle")
@@ -22,9 +30,6 @@ for i in range(0, 5):
     t.penup()
     t.goto(x=X, y=-100 + 50 * i)
     turtles.append(t)
-
-if bet:
-    Race = True  # 如果用户输入了投注，开始游戏
 
 while Race:
     # 每一轮比赛
