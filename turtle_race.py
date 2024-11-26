@@ -3,7 +3,7 @@
 
 import random
 from turtle import Turtle, Screen
-from record_game import record_record_game_data
+from record_game import record_game_data
 Race = False
 
 s = Screen()
