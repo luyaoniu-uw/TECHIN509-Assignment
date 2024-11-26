@@ -1,4 +1,5 @@
 # code credit: https://www.geeksforgeeks.org/turtle-race-game-using-python-turtle-graphics-library/
+from record_game import record_game_data 
 
 
 import random
@@ -38,5 +39,12 @@ while Race:
 
         distance = random.randint(0, 10)
         turtle.forward(distance)
+if winning == bet:
+    print(f"You have Won the bet on {winning} turtle! The {winning} is the winner")
+else:
+    print(f"You lose! {winning} turtle is the winner")
 
+record_game_data(bet, winning)
 s.exitonclick()
+
+
