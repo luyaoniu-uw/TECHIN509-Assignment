@@ -37,7 +37,7 @@ while Race:
 
             else:
                 print(f"You lose! {winning} turtle is the winner")
-        record_game_data(bet, winning)
+            record_game_data(bet, winning)
 
         distance = random.randint(0, 10)
         turtle.forward(distance)
