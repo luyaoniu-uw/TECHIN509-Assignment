@@ -11,16 +11,14 @@ s = Screen()
 s.setup(width=500, height=400)
 bet = s.textinput(title="Make your Bet", prompt="Which turtle which win ? Enter Color : ")
 
+X = -230
+Y = -100
+colors = ["red", "orange", "yellow", "blue", "violet"]  
 
 # as required, try verify if user input is in colors
 if bet not in colors:
     print(f"Invalid input: {bet}. Please enter one of the following colors: {', '.join(colors)}")
     exit()
-
-
-X = -230
-Y = -100
-colors = ["red", "orange", "yellow", "blue", "violet"]  
 
 turtles = []
 for i in range(0, 5):
