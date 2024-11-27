@@ -3,12 +3,13 @@
 
 import random
 from turtle import Turtle, Screen
+from record_game import record_game_data
 
 Race = False
 
 s = Screen()
 s.setup(width=500, height=400)
-bet = s.textinput(title="Make your Bet", prompt="Which turtle which win ? Enter Color : ")
+bet = s.textinput(title="Make your Bet", prompt="Which turtle will win ? Enter Color : ")
 
 X = -230
 Y = -100
@@ -39,7 +40,7 @@ while Race:
                 print(f"You have Won the bet on {winning} turtle! the {winning} is the winner")
             else:
                 print(f"You lose! {winning} turtle is winner")
-
+            record_game_data(bet, winning)
         distance = random.randint(0, 10)
         turtle.forward(distance)
 
