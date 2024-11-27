@@ -21,6 +21,9 @@ for i in range(0, 5):
     t.goto(x=X, y=-100 + 50 * i)
     turtles.append(t)
 
+if bet not in colors:
+    raise ValueError(f"Invalid input: {bet}. Please choose a valid color from {colors}.")
+
 if bet:
     Race = True
 
